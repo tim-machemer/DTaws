@@ -15,7 +15,7 @@ using DealerTrackJsonTranslator.Code;
 
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 
-namespace HelloWorld.Tests
+namespace SelectFiDealerTrack.Tests
 {
   public class FunctionTest
   {
@@ -35,14 +35,7 @@ namespace HelloWorld.Tests
     [Fact]
     public async Task TestHelloWorldFunctionHandler()
     {
-            var request = new APIGatewayProxyRequest();
             var context = new TestLambdaContext();
-            string location = GetCallingIP().Result;
-            Dictionary<string, string> body = new Dictionary<string, string>
-            {
-                { "message", "hello world" },
-                { "location", location },
-            };
 
             var expectedResponse = "/deals/01H2TGWGWTQ2F5KHD6DEVC866X/partner-dealers/1234/credit-apps/lenders/DT6/decisions/latest";
 
@@ -65,6 +58,7 @@ namespace HelloWorld.Tests
             Console.WriteLine($"Lambda Response: \n{response}");
             Console.WriteLine($"Expected Response: \n{expectedResponse}");
 
+            Assert.DoesNotContain("Decryption failed", response);
             Assert.Contains(expectedResponse, response);
             }
   }

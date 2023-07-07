@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>HelloWorld.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\HelloWorld\HelloWorld.csproj" />
+    <ProjectReference Include="..\..\src\SelectFiDealerTrack\SelectFiDealerTrack.csproj" />
   </ItemGroup>
 
 </Project>

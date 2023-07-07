@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: 'Sample SAM Template for HelloWorld
+Description: 'Sample SAM Template for SelectFiDealerTrack
 
   '
 Globals:
@@ -8,11 +8,11 @@ Globals:
     Timeout: 10
     MemorySize: 128
 Resources:
-  HelloWorldFunction:
+  SelectFiDealerTrackFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: HelloWorldFunction
-      Handler: HelloWorld::HelloWorld.Function::FunctionHandler
+      CodeUri: SelectFiDealerTrackFunction
+      Handler: SelectFiDealerTrack::SelectFiDealerTrack.Function::FunctionHandler
       Runtime: dotnet6
       Architectures:
       - x86_64
@@ -21,27 +21,27 @@ Resources:
         Variables:
           PARAM1: VALUE
       Events:
-        HelloWorld:
+        SelectFiDealerTrack:
           Type: Api
           Properties:
-            Path: /hello
+            Path: /SelectFiDealerTrack
             Method: get
     Metadata:
-      SamResourceId: HelloWorldFunction
+      SamResourceId: SelectFiDealerTrackFunction
 Outputs:
-  HelloWorldApi:
-    Description: API Gateway endpoint URL for Prod stage for Hello World function
+  SelectFiDealerTrackApi:
+    Description: API Gateway endpoint URL for Prod stage for SelectFiDealerTrack function
     Value:
-      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/
-  HelloWorldFunction:
-    Description: Hello World Lambda Function ARN
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/SelectFiDealerTrack/
+  SelectFiDealerTrackFunction:
+    Description: SelectFiDealerTrack Lambda Function ARN
     Value:
       Fn::GetAtt:
-      - HelloWorldFunction
+      - SelectFiDealerTrackFunction
       - Arn
-  HelloWorldFunctionIamRole:
-    Description: Implicit IAM Role created for Hello World function
+  SelectFiDealerTrackFunctionIamRole:
+    Description: Implicit IAM Role created for SelectFiDealerTrack function
     Value:
       Fn::GetAtt:
-      - HelloWorldFunctionRole
+      - SelectFiDealerTrackFunctionRole
       - Arn

@@ -7,14 +7,14 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {},
     ".NETCoreApp,Version=v6.0/linux-x64": {
-      "HelloWorld/1.0.0": {
+      "SelectFiDealerTrack/1.0.0": {
         "dependencies": {
           "Amazon.Lambda.APIGatewayEvents": "2.4.0",
           "Amazon.Lambda.Core": "2.1.0",
           "Amazon.Lambda.Serialization.SystemTextJson": "2.2.0"
         },
         "runtime": {
-          "HelloWorld.dll": {}
+          "SelectFiDealerTrack.dll": {}
         }
       },
       "Amazon.Lambda.APIGatewayEvents/2.4.0": {
@@ -47,7 +47,7 @@
     }
   },
   "libraries": {
-    "HelloWorld/1.0.0": {
+    "SelectFiDealerTrack/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -10,7 +10,7 @@ using DealerTrackJsonTranslator.Code;
     
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 
-namespace HelloWorld
+namespace SelectFiDealerTrack
 {
 
     public class Function
